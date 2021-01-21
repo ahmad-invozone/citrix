@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <title>CITRIX APP</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="assets/js/font-awesome.js" ></script>
+    <!-- Google fonts-->
+    <link href="assets/fonts/montserrat.css" rel="stylesheet" type="text/css" />
+    <link href="assets/fonts/lato.css" rel="stylesheet"
+        type="text/css" />
+    <link href="assets/fonts/montserrat.css" rel="stylesheet"
+        type="text/css" />
+    <!-- styling files -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>. -->
+
+    <div class="main-wrap" id="login-screen">
+        <div class="form-main">
+            <div class="form-inner">
+                <div class="logo">
+                    <img src="assets/img/logo.png" alt="">
+                </div>
+                <div class="input-field">
+                    <input type="text" name="" placeholder="Type Serial Key">
+                    <button class="next-btn" id="login"><i class="fas fa-arrow-right"></i> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrap" id="main-app" style="display: none;">
+        <div class="form-main">
+            <div class="form-inner dashboard-main">
+                <div class="grid">
+                    <header class="header">
+                        <i class="fas fa-bars header__menu"></i>
+                        <h6 class="heading-profile">Bakedsneaks</h6>
+                        <div class="header__avatar">
+
+                        </div>
+                        <div  id="logout">
+                          <i class="fas fa-sign-out-alt" style="color: white"></i>
+                        </div>
+                   </header>
+    
+                    <aside class="sidenav">
+                        <div class="sidenav__brand">
+                            <img src="assets/img/logo.png" alt="">
+                        </div>
+    
+                        <div class="row--align-v-center row--align-h-center">
+                            <ul class="navList">
+                                <li>
+                                    <div class="navList__subheading navList__subheading-signle row row--align-v-center">
+                                        <span class="navList__subheading-icon"><i class="fas fa-chart-line"></i></span>
+                                        <span class="navList__subheading-title">Analytics</span>
+                                    </div>
+    
+                                </li>
+                                <li>
+                                    <div class="navList__subheading row row--align-v-center">
+                                        <span class="navList__subheading-icon"><i class="fas fa-list"></i></span>
+                                        <span class="navList__subheading-title">Task Groups</span>
+                                    </div>
+                                    <ul class="subList subList--hidden">
+                                        <li class="subList__item">Shopify</li>
+                                        <li class="subList__item">Footsites</li>
+                                        <li class="subList__item">Supreme</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="navList__subheading row row--align-v-center">
+                                        <span class="navList__subheading-icon"><i class="fas fa-cog"></i></span>
+                                        <span class="navList__subheading-title">Settings</span>
+                                    </div>
+                                    <ul class="subList subList--hidden">
+                                        <li class="subList__item">Proxies</li>
+                                        <li class="subList__item">Captchas</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="navList__subheading navList__subheading-signle row row--align-v-center">
+                                        <span class="navList__subheading-icon"><i class="fas fa-id-card-alt"></i></span>
+                                        <span class="navList__subheading-title">Profile</span>
+                                    </div>
+    
+                                </li>
+    
+                            </ul>
+                        </div>
+                    </aside>
+    
+                    <main class="main">
+                        <div class="inner-content">
+                            <div class="heading">
+                                <h3>Analytics</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="recent-analytic">
+    
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="analytics-box">
+                                        <h4>Checkouts</h4>
+                                        <h2>18</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="analytics-box declines">
+                                        <h4>Declines</h4>
+                                        <h2>2</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-content checkout-history">
+                            <div class="heading">
+                                <h3>Checkouts History</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="history-box"></div>
+                                    <div class="history-box"></div>
+                                    <div class="history-box"></div>
+                                    <div class="history-box"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       window.$ = window.jquery = window.jQuery = require("jquery");
+        window.popper = require("popper.js");
+        require("bootstrap");
+        require("./renderer.js");
+        require("./assets/js/scripts.js");
+    </script>
+</body>
+
+</html>
