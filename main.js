@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
 
 // for live re-loading
@@ -8,14 +8,15 @@ require('electron-reload')(__dirname, {
 });
 
 function createWindow() {
+    const display = screen.getPrimaryDisplay();
+    const { width, height } = display.bounds;
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        icon: 'assets/img/logo.png',
+        width,
+        height,
         webPreferences: {
             nodeIntegration: true,
-            preload: path.join(__dirname, 'preload.js'),
+            // preload: path.join(__dirname, 'preload.js'),
         },
     });
 
